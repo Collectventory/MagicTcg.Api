@@ -18,9 +18,9 @@ namespace MagicTcg.Api.Actions.MtgJson
             DownloadDirectory = downloadDirectory;
             _includeExtras = includeExtras;
 
-            FileName = $"_{ExpansionSetCode}{ExtrasFileCode}.json";
-            DestinationUri = Path.Combine($"{DownloadDirectory}", $"{FileName}");
-            SourceUri = Path.Combine($"{Api.MtgJson.BaseApiUri}", $"_{FileName}");
+            FileName = $"{ExpansionSetCode}{ExtrasFileCode}.json";
+            DestinationUri = Path.Combine($"{DownloadDirectory}", $"_{FileName}");
+            SourceUri = Path.Combine($"{Api.MtgJson.BaseApiUri}", $"{FileName}");
         }
     }
 }
