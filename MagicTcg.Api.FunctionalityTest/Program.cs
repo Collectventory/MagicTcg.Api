@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +13,14 @@ namespace MagicTcg.Api.FunctionalityTest
         {
             var mtgJson = new MtgJson();
 
-            mtgJson.DownloadExpansionSet("SHM", @"C:/CardDownloads");
-            mtgJson.DownloadExpansionSet("CON", @"C:/CardDownloads");
-            mtgJson.DownloadExpansionSet("WWK", @"C:/CardDownloads");
+            var downloadDirectory = Path.GetTempPath();
 
-            mtgJson.DownloadAllExpansions(@"C:\CardDownloads");
-            mtgJson.DownloadAllExpansions(@"C:\CardDownloads", true);
+            mtgJson.DownloadExpansionSet("SHM", downloadDirectory);
+            mtgJson.DownloadExpansionSet("CON", downloadDirectory);
+            mtgJson.DownloadExpansionSet("WWK", downloadDirectory);
+
+            mtgJson.DownloadAllExpansions(downloadDirectory);
+            mtgJson.DownloadAllExpansions(downloadDirectory, true);
         }
     }
 }
