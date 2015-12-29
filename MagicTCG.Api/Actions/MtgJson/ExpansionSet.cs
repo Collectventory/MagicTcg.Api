@@ -5,9 +5,6 @@ namespace MagicTcg.Api.Actions.MtgJson
 {
     internal class ExpansionSet : FileDownload
     {
-        private readonly bool _includeExtras;
-        protected string ExtrasFileCode => (_includeExtras) ? "-x" : String.Empty;
-
         public string ExpansionSetCode { get; protected set; }
 
 
@@ -16,9 +13,9 @@ namespace MagicTcg.Api.Actions.MtgJson
         {
             ExpansionSetCode = expansionSetCode;
             DownloadDirectory = downloadDirectory;
-            _includeExtras = includeExtras;
+            IncludeExtras = includeExtras;
 
-            FileName = $"{ExpansionSetCode}{ExtrasFileCode}.json";
+            FileName = $"{ExpansionSetCode}{ExtrasCode}.{FileExtension}";
             DestinationUri = Path.Combine($"{DownloadDirectory}", $"_{FileName}");
             SourceUri = Path.Combine($"{Api.MtgJson.BaseApiUri}", $"{FileName}");
         }

@@ -21,6 +21,9 @@ namespace MagicTcg.Api.FunctionalityTest
 
             mtgJson.DownloadAllExpansions(downloadDirectory);
             mtgJson.DownloadAllExpansions(downloadDirectory, true);
+
+            mtgJson.DownloadAllCards(downloadDirectory);
+            mtgJson.DownloadAllCards(downloadDirectory, true);
         }
     }
 }

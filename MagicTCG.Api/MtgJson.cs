@@ -54,5 +54,12 @@ namespace MagicTcg.Api
         {
             DownloadExpansionSet("AllSets", downloadDirectory, includeExtras);
         }
+
+
+        public void DownloadAllCards(string downloadDirectory, bool includeExtras = false)
+        {
+            var download = new Card(downloadDirectory, includeExtras);
+            download.Download();
+        }
     }
 }

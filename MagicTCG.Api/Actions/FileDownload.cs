@@ -1,9 +1,13 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 
 namespace MagicTcg.Api.Actions
 {
     internal abstract class FileDownload
     {
+        protected bool IncludeExtras;
+        protected string ExtrasCode => (IncludeExtras) ? "-x" : String.Empty;
+
         protected readonly string ApiRoute;
         protected readonly string FileExtension;
 

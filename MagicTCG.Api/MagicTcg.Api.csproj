@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Actions\Gatherer\ExpansionSetSymbolRarity.cs" />
     <Compile Include="Actions\Gatherer\ExpansionSetImage.cs" />
+    <Compile Include="Actions\MtgJson\Card.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\ExpansionSet.cs" />
     <Compile Include="Gatherer.cs" />
